@@ -3,6 +3,7 @@ import json
 from datetime import datetime
 from collections import namedtuple
 
+# SettingUP Input and Output files
 input_file = r"input/input.txt"
 output_file = r"output/output.txt"
 
