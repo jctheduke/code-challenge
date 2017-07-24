@@ -8,6 +8,3 @@ class ImageUpload(object):
 
     def __str__(self):
         return "{}, {}, {}, {}".format(self.key, self.event_time, self.customer_id, self.camera_make, self.camera_model)
-
-x = ImageUpload("a","b","c","d","e")
-print(x)

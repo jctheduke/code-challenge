@@ -3,7 +3,10 @@ import json
 from datetime import datetime
 from collections import namedtuple
 
-with open(r'C:\Users\priyaranjanjc\Desktop\code-challenge\input\input.txt') as f:
+input_file = r"input/input.txt"
+output_file = r"output/output.txt"
+
+with open(input_file) as f:
     input_data = json.load(f)
 
 data = DataStructure.DataStructure()
@@ -65,11 +68,11 @@ def compute_ltv(customer):
 
     # calculating average customer value and visits per week
     no_of_weeks = last_order.isocalendar()[1] - first_order.isocalendar()[1] + 1
-    average_customer_value = total_amount/no_of_weeks
-    visits_per_week = site_visits * 1.0/no_of_weeks
+    average_customer_value_per_visit = total_amount / site_visits
+    visits_per_week = site_visits * 1.0/ no_of_weeks
 
     # calculating customer lifetime value
-    customer_lifetime_value = 52* average_customer_value * visits_per_week
+    customer_lifetime_value = 52* average_customer_value_per_visit * visits_per_week
 
     return customer_lifetime_value
 
@@ -92,7 +95,7 @@ def top_x_ltv(x,database):
     top_x_customers = sorted_customer_ltv[:x]
 
     # Printing top x customers
-    with open(r"C:\Users\priyaranjanjc\Desktop\code-challenge\output\output.txt",'w') as f:
+    with open(output_file,'w') as f:
         for key,value in top_x_customers:
             customer = database.get_customer(key)
             f.write("customer_id : {}, customer_lastname = {}, customer value :${:.2f}\n".format(key , customer['Customer'].last_name.ljust(20), value))

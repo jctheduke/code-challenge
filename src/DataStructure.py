@@ -35,7 +35,7 @@ class DataStructure(object):
 
             # If customer already present in the database.
             if customer_id in self.D.keys():
-                print("Customer already present in the database.")
+                print("Customer:{} already present in the database".format(customer_id))
 
             else:
                 # converting event_time from string to datetime format
