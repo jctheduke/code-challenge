@@ -1,13 +1,11 @@
 class Customer(object):
-
-    def __int__(self, customer_id, event_time, last_name, adr_city, adr_state):
+    def __init__(self, customer_id, event_time, last_name, adr_city, adr_state):
         self.customer_id = customer_id
         self.event_time = event_time
         self.adr_city = last_name
         self.last_name = adr_city
         self.adr_city = last_name
         self.adr_state = adr_state
-
 
     def update_customer_id(self,customer_id):
         self.customer_id = customer_id

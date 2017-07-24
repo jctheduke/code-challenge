@@ -1,6 +1,6 @@
 class Order:
 
-    def __int__(self, key, event_time, customer_id, total_amount):
+    def __init__(self, key, event_time, customer_id, total_amount):
         self.key = key
         self.event_time = event_time
         self.customer_id = customer_id
