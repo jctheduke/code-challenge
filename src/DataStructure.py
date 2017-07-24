@@ -8,9 +8,14 @@ class DataStructure(object):
     def __init__(self):
         self.D = defaultdict(self.data_structure)
 
+    def items(self):
+        return self.D.items()
 
     def data_structure(self):
         return {'Customer':None,'SiteVisit':[],'ImageUpload':[],'Order':[],'OrderId':[]}
+
+    def get_customer(self,customer_id):
+        return self.D[customer_id]
 
     def add_new_customer(self,*args):
 

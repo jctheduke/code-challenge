@@ -1,1 +1,3 @@
-Your output data will end up here
+customer_id : 96f55a7d8f47, customer_lastname = Anirudh             , customer value :$757.27
+customer_id : 96f55c7d8f45, customer_lastname = Jenna               , customer value :$222.04
+customer_id : 96f55a7d8f52, customer_lastname = Mithi               , customer value :$189.11
