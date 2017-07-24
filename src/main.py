@@ -4,8 +4,8 @@ from datetime import datetime
 from collections import namedtuple
 
 # Setting up Input and Output files
-input_file = r"input/input.txt"
-output_file = r"output/output.txt"
+input_file = r"C:\Users\priyaranjanjc\Desktop\code-challenge\input\input.txt"
+output_file = r"C:\Users\priyaranjanjc\Desktop\code-challenge\output\output.txt"
 
 # Reading input file JSON file.
 with open(input_file) as f:

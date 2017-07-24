@@ -1,3 +1,5 @@
+* This code was written in python 3.Please use python 3 to run main file,else there might be
+	compatability problems.
 * Run the main file in Src
 * DataStrucutre is in-memory built-in data strucute to hold the data with integrety and security
 * Customer.py,ImageUpload.py,Order.py,SiteVisit.py are objects for holding respective events.
