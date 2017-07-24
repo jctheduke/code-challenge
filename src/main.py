@@ -99,4 +99,4 @@ def top_x_ltv(x,database):
             print(key , customer['Customer'].last_name, value)
 
 
-top_x_ltv(3,data)
+top_x_ltv(10,data)

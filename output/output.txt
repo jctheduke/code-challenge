@@ -1,3 +1,10 @@
 customer_id : 96f55a7d8f47, customer_lastname = Anirudh             , customer value :$757.27
 customer_id : 96f55c7d8f45, customer_lastname = Jenna               , customer value :$222.04
 customer_id : 96f55a7d8f52, customer_lastname = Mithi               , customer value :$189.11
+customer_id : 96f55a7d8f51, customer_lastname = Ragha               , customer value :$149.22
+customer_id : 96f55a7d8f46, customer_lastname = Harry               , customer value :$120.20
+customer_id : 96f55c7d8f44, customer_lastname = Emma                , customer value :$80.96
+customer_id : 96f55a7d8f50, customer_lastname = Sathi               , customer value :$25.56
+customer_id : 96f55c7d8f43, customer_lastname = Erica               , customer value :$9.85
+customer_id : 96f55a7d8f48, customer_lastname = Prash               , customer value :$4.53
+customer_id : 96f55c7d8f42, customer_lastname = Smith               , customer value :$3.67
