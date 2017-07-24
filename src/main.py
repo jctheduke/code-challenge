@@ -3,16 +3,25 @@ import json
 from datetime import datetime
 from collections import namedtuple
 
-# SettingUP Input and Output files
+# Setting up Input and Output files
 input_file = r"input/input.txt"
 output_file = r"output/output.txt"
 
+# Reading input file JSON file.
 with open(input_file) as f:
     input_data = json.load(f)
 
+# Intiating the DataStructure
 data = DataStructure.DataStructure()
 
+
 def ingest(event,database):
+    """
+     Executes ingest for given event and given datastructure.
+    :param event: JSON format of the event.
+    :param database: Datastructure passed as a object
+    :return: None
+    """
 
     # customer event
     if event['type'] == 'CUSTOMER':
@@ -38,10 +47,20 @@ def ingest(event,database):
         elif event['type'] == 'UPDATE':
             database.update_order(event['key'],event['event_time'],event['customer_id'],event['total_amount'])
 
+# Processing events in given JSON input file.
 for event in input_data:
     ingest(event,data)
 
+
 def compute_ltv(customer):
+    """
+    Computes LTV for given customer according to formula 52(a)*t.
+    where:
+        a - Average Customer revenue.
+        t - Retention period of customer ( 10 years for shutter fly)
+    :param customer: Customer object contains orders,site visits,Image Uploads and Customer details.
+    :return: return LTV value of given customer.
+    """
 
     # first and last order of the customer
     first_order = customer['Order'][0].event_time
@@ -50,6 +69,8 @@ def compute_ltv(customer):
 
     # total expenditure of the customer
     total_amount = 0
+
+    # calcualte total number of site visits and total revenue for these visits.
     for order in customer['Order']:
 
         # converting and storing customer revenue
@@ -80,6 +101,12 @@ def compute_ltv(customer):
 
 
 def top_x_ltv(x,database):
+    """
+
+    :param x: No of Top customers to be calcualted.
+    :param database: Database containing customer data.
+    :return: Return top x customers.
+    """
 
     # customer ltv list
     customer_ltv = namedtuple('customer_ltv','key ltv')
@@ -102,5 +129,8 @@ def top_x_ltv(x,database):
             f.write("customer_id : {}, customer_lastname = {}, customer value :${:.2f}\n".format(key , customer['Customer'].last_name.ljust(20), value))
             print(key , customer['Customer'].last_name, value)
 
+    return top_x_customers
 
+print(data)
+# Computing top 10 customers.
 top_x_ltv(10,data)
