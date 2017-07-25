@@ -26,3 +26,19 @@ class Order:
 
     def __str__(self):
         return "{}, {}, {}, {}".format(self.key, self.event_time, self.customer_id, self.total_amount)
+
+if __name__ == "__main__":
+
+    # chekcing the object
+    if isinstance(Order(*['1', '2017-01-06T12:46:46.384Z', '101','17.34 USD']), Order):
+        print("Order object is created with out a problem")
+    else:
+        print("There is problem with Order class please check !")
+
+    # check the customer details.
+    order = Order(*['1', '2017-01-06T12:46:46.384Z', '101','17.34 USD'])
+    if (order.key == '1') and order.event_time == '2017-01-06T12:46:46.384Z' and order.customer_id == \
+            '101' and order.total_amount == "17.34 USD" :
+        print("All Order attributes can be retrived properly")
+    else:
+        print("There is problem with extracting Order attributes.")

@@ -2,7 +2,6 @@ from src import customer, ImageUpload, Order, SiteVisit
 from dateutil import parser
 from collections import defaultdict
 import warnings
-import re
 
 
 class DataStructure(object):
